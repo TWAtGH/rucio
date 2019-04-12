@@ -708,6 +708,9 @@ class DownloadClient:
             if not item.get('shall_keep_archive'):
                 logger.debug('%sDeleting archive %s' % (log_prefix, did_name))
                 os.remove(archive_file_path)
+        else:
+            # output expected by tests
+            logger.debug('%sDownloaded single file directly' % log_prefix)
 
         return item
 
